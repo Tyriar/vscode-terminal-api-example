@@ -1,14 +1,12 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
+
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
     let terminalStack = [];
 
     context.subscriptions.push(vscode.commands.registerCommand('terminalTest.createTerminal', () => {
-        (<any>vscode.window).createTerminal(`Ext Terminal #${terminalStack.length + 1}`).then((t) => {
-            terminalStack.push(t);
-        });
+        terminalStack.push((<any>vscode.window).createTerminal(`Ext Terminal #${terminalStack.length + 1}`));
     }));
     context.subscriptions.push(vscode.commands.registerCommand('terminalTest.hide', () => {
         if (terminalStack.length === 0) {
@@ -38,9 +36,8 @@ export function activate(context: vscode.ExtensionContext) {
         if (terminalStack.length === 0) {
             vscode.window.showErrorMessage('No active terminals');
         }
-        getLatestTerminal().dispose().then(() => {
-            terminalStack.pop();
-        });
+        getLatestTerminal().dispose();
+        terminalStack.pop();
     }));
 
     function getLatestTerminal() {
