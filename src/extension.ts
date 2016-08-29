@@ -39,6 +39,10 @@ export function activate(context: vscode.ExtensionContext) {
         getLatestTerminal().dispose();
         terminalStack.pop();
     }));
+    context.subscriptions.push(vscode.commands.registerCommand('terminalTest.createAndSend', () => {
+        terminalStack.push((<any>vscode.window).createTerminal(`Ext Terminal #${terminalStack.length + 1}`));
+        getLatestTerminal().sendText("echo \"Sent text immediately after creating\"");
+    }));
 
     function getLatestTerminal() {
         return terminalStack[terminalStack.length - 1];

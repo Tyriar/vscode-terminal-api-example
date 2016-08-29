@@ -11,7 +11,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:terminalTest.createTerminal"
+        "onCommand:terminalTest.createTerminal",
+        "onCommand:terminalTest.createAndSend"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -33,6 +34,9 @@
         }, {
             "command": "terminalTest.dispose",
             "title": "Terminal API: Dispose"
+        }, {
+            "command": "terminalTest.createAndSend",
+            "title": "Terminal API: Create Terminal and Immediately Send"
         }]
     },
     "scripts": {
