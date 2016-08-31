@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
         terminalStack.push((<any>vscode.window).createTerminal({
             name: `Ext Terminal #${terminalStack.length + 1}`
         }));
-        getLatestTerminal().sendText("echo \"Sent text immediately after creating\"");
+        getLatestTerminal().sendText("echo 'Sent text immediately after creating'");
     }));
 
     function getLatestTerminal() {
