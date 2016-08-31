@@ -24,13 +24,13 @@ export function activate(context: vscode.ExtensionContext) {
         if (terminalStack.length === 0) {
             vscode.window.showErrorMessage('No active terminals');
         }
-        getLatestTerminal().sendText("echo \"Hello world!\"");
+        getLatestTerminal().sendText("echo 'Hello world!'");
     }));
     context.subscriptions.push(vscode.commands.registerCommand('terminalTest.sendTextNoNewLine', () => {
         if (terminalStack.length === 0) {
             vscode.window.showErrorMessage('No active terminals');
         }
-        getLatestTerminal().sendText("echo \"Hello world!\"", false);
+        getLatestTerminal().sendText("echo 'Hello world!'", false);
     }));
     context.subscriptions.push(vscode.commands.registerCommand('terminalTest.dispose', () => {
         if (terminalStack.length === 0) {

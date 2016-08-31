@@ -30,7 +30,7 @@
             "title": "Terminal API: Send Text"
         }, {
             "command": "terminalTest.sendTextNoNewLine",
-            "title": "Terminal API: Send Text (no implied \n)"
+            "title": "Terminal API: Send Text (no implied \\n)"
         }, {
             "command": "terminalTest.dispose",
             "title": "Terminal API: Dispose"
