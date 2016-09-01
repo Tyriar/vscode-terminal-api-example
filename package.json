@@ -26,6 +26,9 @@
             "command": "terminalTest.show",
             "title": "Terminal API: Show"
         }, {
+            "command": "terminalTest.showPreserveFocus",
+            "title": "Terminal API: Show (preserving focus)"
+        }, {
             "command": "terminalTest.sendText",
             "title": "Terminal API: Send Text"
         }, {

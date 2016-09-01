@@ -20,6 +20,12 @@ export function activate(context: vscode.ExtensionContext) {
         }
         getLatestTerminal().show();
     }));
+    context.subscriptions.push(vscode.commands.registerCommand('terminalTest.showPreserveFocus', () => {
+        if (terminalStack.length === 0) {
+            vscode.window.showErrorMessage('No active terminals');
+        }
+        getLatestTerminal().show(true);
+    }));
     context.subscriptions.push(vscode.commands.registerCommand('terminalTest.sendText', () => {
         if (terminalStack.length === 0) {
             vscode.window.showErrorMessage('No active terminals');
