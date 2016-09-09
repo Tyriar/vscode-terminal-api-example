@@ -1,5 +1,7 @@
 # vscode-terminal-api-example
 
+**⚠️ This repo has been merged into [Microsoft/vscode-extension-samples](https://github.com/Microsoft/vscode-extension-samples) and is now deprecated ⚠️**
+
 This repo demonstrates how to utilize the integrated terminal extension API coming in Visual Studio Code v1.5.0.
 
 Several commands are exposed prefixed with "Terminal API" that show how to use the API:
